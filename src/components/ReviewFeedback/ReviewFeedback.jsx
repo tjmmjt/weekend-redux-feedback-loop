@@ -1,14 +1,25 @@
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const ReviewFeedback = () => {
     // console.log("in ReviewFeedback()");
 
     // retrieve store data
     const feedback = useSelector(store => store.feedback)
-    // console.log(feedback);
+    const history = useHistory()
 
     // POST review
     const handlePOST = () => {
+        axios.post('/api/feedback', feedback)
+        .then(result => {
+            console.log('Feedback Submitted');
+        })
+        .catch(err => {
+            console.error('Feedback failed to submit:', err)
+        })
+
+        history.push('/thank_you')
     }
     
     // ! feeling, understanding, support, comments, review, thank you.
@@ -25,7 +36,7 @@ const ReviewFeedback = () => {
                     <li><span id="reviewItems">Comments:</span> {feedback.comments}</li>
                 </ul>
             </div>
-            <button>Submit</button>
+            <button onClick={handlePOST}>Submit</button>
         </div>
         </>
     )
