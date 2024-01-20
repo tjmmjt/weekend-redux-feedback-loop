@@ -13,7 +13,8 @@ const Feeling = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault()
         // console.log('handleSubmit()');
         dispatch({
             type: 'ADD_FEELING',
@@ -26,16 +27,19 @@ const Feeling = () => {
         <>
         <div className="compContainer">
             <h1>How are you feeling?</h1>
-            <div className="rating">
-                <input 
+            <form className="rating" onSubmit={handleSubmit} data-testid="next">
+                <input
+                    min={1}
+                    max={10}
                     data-testid="input"
                     onChange={(event) => setState(Number(event.target.value))}
-                    id='input' 
+                    id='numInput' 
                     type="number" 
                     placeholder="1-10?"
+                    required
                 />
-                <button data-testid="next" onClick={handleSubmit}>Next</button>
-            </div>
+                <button>Next</button>
+            </form>
         </div>
         </>
     )

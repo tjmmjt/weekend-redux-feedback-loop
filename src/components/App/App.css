@@ -50,3 +50,8 @@ ul li {
 #reviewItems {
   color: rgb(95, 95, 95);
 }
+
+#numInput {
+  width: 4rem;
+  margin: 0 0.5rem;
+}
