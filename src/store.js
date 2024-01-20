@@ -11,6 +11,9 @@ const feedback = (state = {}, action) => {
             break;
         case 'ADD_UNDERSTANDING':
             return {...state, understanding: action.payload}
+            break;
+        case 'ADD_SUPPORT':
+            return {...state, support: action.payload}
         default: return state
             break;
     }

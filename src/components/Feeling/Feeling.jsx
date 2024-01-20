@@ -4,21 +4,20 @@ import { useHistory } from "react-router-dom";
 // import handleSubmit from "../handleSubmit/handleSubmit";
 
 const Feeling = () => {
-    console.log("in Feeling()");
+
     // return component div, container heading, input, and button
     // button, on click, dispatches input to store
     // then proceed to '/understanding'
 
-    const [feeling, setFeeling] = useState('')
+    const [state, setState] = useState(5)
     const dispatch = useDispatch()
     const history = useHistory()
 
     const handleSubmit = () => {
-        console.log('handleSubmit()');
-
+        // console.log('handleSubmit()');
         dispatch({
             type: 'ADD_FEELING',
-            payload: feeling
+            payload: state
         })
         history.push('/understanding')
     }
@@ -26,10 +25,10 @@ const Feeling = () => {
     return(
         <>
         <div className="compContainer">
-            <h1>How are you feeling today?</h1>
+            <h1>How are you feeling?</h1>
             <div className="rating">
                 <input 
-                    onChange={(event) => setFeeling(Number(event.target.value))}
+                    onChange={(event) => setState(Number(event.target.value))}
                     id='input' 
                     type="number" 
                     placeholder="1-10?"
