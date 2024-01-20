@@ -36,7 +36,7 @@ const ReviewFeedback = () => {
                     <li><span id="reviewItems">Comments:</span> {feedback.comments}</li>
                 </ul>
             </div>
-            <button onClick={handlePOST}>Submit</button>
+            <button data-testid="next" onClick={handlePOST}>Submit</button>
         </div>
         </>
     )
