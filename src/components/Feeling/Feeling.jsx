@@ -29,10 +29,10 @@ const Feeling = () => {
             <h1>How are you feeling today?</h1>
             <div className="rating">
                 <input 
-                    onChange={(event) => setFeeling(event.target.value)}
+                    onChange={(event) => setFeeling(Number(event.target.value))}
                     id='input' 
                     type="number" 
-                    placeholder="Feeling on scale: 1-10?"
+                    placeholder="1-10?"
                 />
                 <button onClick={handleSubmit}>Next</button>
             </div>
