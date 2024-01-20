@@ -28,12 +28,13 @@ const Comments = () => {
             <h1>Any Additional Comments?</h1>
             <div className="rating">
                 <input 
+                    data-testid="input"
                     onChange={(event) => setState(event.target.value)}
                     id='input' 
                     type="text" 
                     placeholder="Comments?"
                 />
-                <button onClick={handleSubmit}>Next</button>
+                <button data-testid="next" onClick={handleSubmit}>Next</button>
             </div>
         </div>
         </>

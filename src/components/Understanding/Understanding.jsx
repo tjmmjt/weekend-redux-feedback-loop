@@ -28,12 +28,13 @@ const Understanding = () => {
             <h1>How well are you understanding this weeks material?</h1>
             <div className="rating">
                 <input 
+                    data-testid="input"
                     onChange={(event) => setState(Number(event.target.value))}
                     id='input' 
                     type="number" 
                     placeholder="1-10?"
                 />
-                <button onClick={handleSubmit}>Next</button>
+                <button data-testid="next" onClick={handleSubmit}>Next</button>
             </div>
         </div>
         </>
