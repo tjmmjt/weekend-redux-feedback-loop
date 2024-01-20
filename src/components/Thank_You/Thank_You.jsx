@@ -20,7 +20,7 @@ const Thank_You = () => {
             <h1>Thank You!</h1>
             <h3>Your Feedback was Recorded</h3>
 
-            <button onClick={handleReset}>Take another Survey</button>
+            <button data-testid="next" onClick={handleReset}>Take Another Survey</button>
         </>
     )
 }
